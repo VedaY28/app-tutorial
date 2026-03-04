@@ -36,7 +36,7 @@ def run_yolo(file_path: str, batch_size: int, device: str):
                 fire_count = 0
                 smoke_count = 0
 
-            ts = int(time.time() * 1_000_000_000)  # timestamp in nanoseconds
+            ts = int(time.time() * 1_000_000_000)
 
             # Publish per-frame data
             plugin.publish("frame.number", i, timestamp=ts)
