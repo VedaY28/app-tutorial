@@ -16,7 +16,7 @@ RUN pip uninstall -y opencv-python opencv-python-headless opencv-contrib-python 
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY main.py firedetect-11s.pt evo_10.mp4 ./
+COPY main.py firedetect-11s.pt evo_16.mp4 ./
 
 # Patch main.py to fix Ultralytics speed key
 RUN sed -i 's/result.speed\[\"dataloading\"\]/result.speed.get(\"preprocess\", 0)/g' /app/main.py
